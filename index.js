@@ -32,7 +32,7 @@ app.post("/send-email", async (req, res) => {
     await axios.post(
       "https://api.brevo.com/v3/smtp/email",
       {
-        sender: { name: "Consultinguz.de", email: "infoconsulting@akhrorweb.uz" },
+        sender: { name: "Consultinguz.de", email: "noreply@consultinguz.uz" },
         to: [{ email }],
         subject: subject || "Yangi xabar",
         textContent: message || undefined,
@@ -43,7 +43,7 @@ app.post("/send-email", async (req, res) => {
           "api-key": apiKey,
           "Content-Type": "application/json",
         },
-      }
+      },
     );
 
     res.json({ success: true });
